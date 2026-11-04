@@ -24,7 +24,7 @@ public class homework {
         System.out.println("=======================");
         // 2. if-else-if分支结构判断学生成绩
         int scores = 70;
-        if(scores <= 100 && scores >= 90){
+        if(scores <= 100 || scores >= 90){
             System.out.println("成绩为优秀~");
         } else if (scores >= 80){
             System.out.println("成绩为良好~");
