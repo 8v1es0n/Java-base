@@ -12,7 +12,8 @@ public class MathUtil {
     // 无论是正数还是负数，都取最小的值 -1.5
     public static int floor(double x){
         if (x < 0){
-            return (int)x - 1;
+            x = x - 0.5;
+            return (int)x;
         }
         return (int)x;
     }
@@ -20,7 +21,8 @@ public class MathUtil {
     // 无论是正数还是负数，都取最大的值
     public static int ceil(double x){
         if (x > 0){
-            return (int)x + 1;
+            x = x + 0.5;
+            return (int)x;
         }
         return (int)x;
     }
