@@ -6,6 +6,9 @@ import java.util.stream.Collectors;
 
 public class Demo02 {
     public static void main(String[] args) {
+        // 选择题
+        // 1.A  2.C 3.C 4.B 5.C 6.B 7.C 8.B 9.C
+
         // 创建一个集合，存储多个字符串元素
         // {"张三丰”, “张无忌”, “张翠山”, “王二麻子”, “张良”, “谢广坤”,“张三丰”}
         ArrayList<String> list = new ArrayList<>(List.of("张三丰", "张无忌", "张翠山", "王二麻子", "张良", "谢广坤","张三丰"));
