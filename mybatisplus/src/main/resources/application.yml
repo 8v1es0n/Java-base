@@ -1,0 +1,14 @@
+#配置数据库连接信息 固定写法直接CV
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # 数据库驱动,固定写法
+    url: jdbc:mysql://localhost:3306/web01 # MySQL连接, 格式为 jdbc:mysql://数据库服务地址:数据库端口号/数据库名称
+    username: root  # 数据库账户名
+    password: 1234  # 数据库密码,记得修改成自己的密码
+
+# 配置MyBatis-Plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 注意我们刚才把mapper接口对应的xml放到了mappers目录中 , 所以这里需要配置一下
+  mapper-locations: classpath:mappers/*.xml

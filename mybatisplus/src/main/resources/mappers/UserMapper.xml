@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 引入mybatis的xml方式编写sql的约束 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--Mapper.xml的固定前置代码-->
+<!--namespace="当前xml对应的接口全类名"-->
+<mapper namespace="com.itheima.mapper.UserMapper">
+    <!--
+        id: 对应接口中方法的名字
+        resultType: 方法的返回值类型
+        查询语句, 必须配置resultType , 这个resultType是类型的全类名
+    -->
+    <select id="selectByNameAndAge" resultType="com.itheima.entity.User">
+        select * from user where name like concat(#{name},'%') and age > #{age}
+    </select>
+    <select id="selectBYUser" resultType="com.itheima.entity.User">
+        select * from user
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="username != null and username != ''">
+                username = #{username)
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password)
+            </if>
+            <if test="name != null and name != ''">
+                name like concat('%', #{name), '%')
+            </if>
+            <if test="age != null">
+                and age = #{age}
+            </if>
+        </where>
+    </select>
+</mapper>
